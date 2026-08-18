@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050509;
+    color: white;
+    font-family: Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+    text-align: center;
+    color: #9B4DFF;
+    font-size: 42px;
+    margin-bottom: 35px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 12px rgba(155, 77, 255, 0.35);
+}
+
+
+/* =========================
+   SETAS
+========================= */
+
+.seta {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9B4DFF;
+    text-decoration: none;
+    font-size: 45px;
+    padding: 10px;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.seta:hover {
+    color: #00FFC6;
+    text-shadow: 0 0 10px #00FFC6;
+}
+
+.esquerda {
+    left: 20px;
+}
+
+.direita {
+    right: 20px;
+}
+
+
+/* =========================
+   IMAGENS
+========================= */
+
+.imagens {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 40px;
+}
+
+.imagem {
+    text-align: center;
+}
+
+.imagem img {
+    width: 230px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #9B4DFF;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(155, 77, 255, 0.20);
+    transition: 0.3s;
+}
+
+.imagem img:hover {
+    border-color: #00FFC6;
+    box-shadow: 0 0 18px rgba(0, 255, 198, 0.25);
+    transform: scale(1.03);
+}
+
+.imagem p {
+    margin-top: 10px;
+    color: #9B4DFF;
+    font-weight: bold;
+}
+
+
+/* =========================
+   CARD PRINCIPAL
+========================= */
+
+.card {
+    background-color: #09090f;
+    border: 2px solid #9B4DFF;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(155, 77, 255, 0.12);
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.card h2 {
+    color: #9B4DFF;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.card > h2:first-child {
+    margin-top: 0;
+}
+
+.card p {
+    color: #eeeeee;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ATRIBUTOS
+========================= */
+
+.atributos {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #9B4DFF;
+}
+
+.atributos h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Lista */
+.atributos-lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* Cada atributo */
+.atributo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #050509;
+    border: 1px solid #9B4DFF;
+    padding: 14px 18px;
+    transition: 0.3s;
+}
+
+.atributo:hover {
+    border-color: #00FFC6;
+    box-shadow: 0 0 10px rgba(0, 255, 198, 0.15);
+}
+
+/* Destaque para a Vida Total (55) */
+.atributo.destaque {
+    border-color: #ef4444;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+.atributo.destaque strong {
+    color: #ef4444;
+    text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+}
+
+/* Nome */
+.atributo span {
+    color: #eeeeee;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Valor */
+.atributo strong {
+    color: #00FFC6;
+    font-size: 18px;
+}
+
+
+/* =========================
+   NÍVEIS E MISSÕES
+========================= */
+
+.niveis-missoes {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #9B4DFF;
+}
+
+.niveis-missoes h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.lista-progresso {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista-progresso li {
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    background-color: #050509;
+    border: 1px solid #3b1d5c;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Status: Passamos / Completada */
+.lista-progresso li.concluido {
+    color: #64748b;
+    text-decoration: line-through;
+    border-color: #1e1b4b;
+    opacity: 0.6;
+}
+
+.lista-progresso li.concluido::before {
+    content: "✓ ";
+    color: #64748b;
+    margin-right: 8px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Status: Atual / Em andamento */
+.lista-progresso li.atual {
+    border-color: #00FFC6;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 255, 198, 0.1);
+}
+
+.lista-progresso li.atual::before {
+    content: "➢ ";
+    color: #00FFC6;
+    margin-right: 8px;
+}
+
+/* Status: Vamos Passar / Vamos Completar */
+.lista-progresso li.futuro {
+    color: #fbbf24;
+    border-style: dashed;
+    border-color: #fbbf24;
+}
+
+.lista-progresso li.futuro::before {
+    content: "🔒 ";
+    margin-right: 8px;
+}
+
+
+/* =========================
+   KAIJUS DERROTADOS
+========================= */
+
+.kaijus-derrotados {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #9B4DFF;
+}
+
+.kaijus-derrotados h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.kaiju-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.kaiju-item {
+    display: flex;
+    background-color: #050509;
+    border: 1px solid #3b1d5c;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.kaiju-item:hover {
+    border-color: #9B4DFF;
+    box-shadow: 0 0 12px rgba(155, 77, 255, 0.15);
+}
+
+/* Espaço da Foto do Kaiju */
+.kaiju-foto {
+    width: 120px;
+    min-width: 120px;
+    background: #11111b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #475569;
+    font-size: 12px;
+    border-right: 1px solid #3b1d5c;
+}
+
+.kaiju-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+/* Detalhes de Texto do Combate */
+.kaiju-detalhes {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.kaiju-detalhes h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #00FFC6;
+    letter-spacing: 0.5px;
+}
+
+.kaiju-detalhes p {
+    margin: 4px 0;
+    font-size: 13px;
+    color: #cdcdcd;
+}
+
+.kaiju-detalhes strong {
+    color: white;
+}
+
+/* Badges de Tipos de Vitória */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+.status-normal {
+    background-color: #334155;
+    color: #ffffff;
+    border: 1px solid #475569;
+}
+
+.status-especial {
+    background-color: #4c1d95;
+    color: #e9d5ff;
+    border: 1px solid #6d28d9;
+}
+
+/* Vitória Absoluta (Destaque animado que paga o especial e o codex) */
+.status-absoluta {
+    background-color: #7f1d1d;
+    color: #fee2e2;
+    border: 1px solid #b91c1c;
+    box-shadow: 0 0 8px rgba(185, 28, 28, 0.4);
+    animation: pulsarStatus 2s infinite;
+}
+
+@keyframes pulsarStatus {
+    0% { opacity: 0.9; box-shadow: 0 0 4px rgba(185, 28, 28, 0.4); }
+    50% { opacity: 1; box-shadow: 0 0 12px rgba(185, 28, 28, 0.7); }
+    100% { opacity: 0.9; box-shadow: 0 0 4px rgba(185, 28, 28, 0.4); }
+}
+
+
+/* =========================
+   ATAQUES (TABELA ORIGINAL)
+========================= */
+
+.ataques {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #9B4DFF;
+}
+
+.ataques h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #9B4DFF;
+    color: white;
+    border: 1px solid #9B4DFF;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+td {
+    background-color: #050509;
+    color: #eeeeee;
+    border: 1px solid #3b1d5c;
+    padding: 12px;
+    text-align: center;
+}
+
+tr:hover td {
+    background-color: #100b18;
+    color: #00FFC6;
+    border-color: #9B4DFF;
+}
+
+
+/* =========================
+   RESPONSIVIDADE APRIMORADA
+========================= */
+
+@media (max-width: 700px) {
+    .container {
+        width: 95%;
+        padding: 25px 10px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .imagens {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .atributos-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .seta {
+        font-size: 30px;
+    }
+
+    .esquerda {
+        left: 5px;
+    }
+
+    .direita {
+        right: 5px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .kaiju-item {
+        flex-direction: column;
+    }
+
+    .kaiju-foto {
+        width: 100%;
+        height: 140px;
+        border-right: none;
+        border-bottom: 1px solid #3b1d5c;
+    }
+    
+    .kaiju-foto img {
+        border-radius: 5px 5px 0 0;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}

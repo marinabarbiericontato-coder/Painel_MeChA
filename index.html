@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marina - Painel Kaiju</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SETAS DE NAVEGAÇÃO -->
+    <a href="index.html" class="seta esquerda">❮</a>
+    <a href="index.html" class="seta direita">❯</a>
+
+    <div class="container">
+
+        <!-- NOME DA PERSONAGEM -->
+        <h1>MARINA</h1>
+
+        <!-- IMAGENS -->
+        <div class="imagens">
+            <div class="imagem">
+                <img src="imagens/skin-marina.jpg" alt="Skin da Marina">
+                <p>Marinoca</p>
+            </div>
+            <div class="imagem">
+                <img src="imagens/mecha-marina.jpg" alt="Mecha da Marina">
+                <p>Barbieri</p>
+            </div>
+        </div>
+
+        <!-- INFORMAÇÕES BÁSICAS -->
+        <div class="card">
+            <h2>Nome do Mecha</h2>
+            <p>BARBIERI</p>
+
+            <h2>Nome da pilota</h2>
+            <p>MARINOCA</p>
+
+            <h2>Função</h2>
+            <p>Barbieri tem o papel de ajudar Marinoca durante as batalhas e no monitoramento de ameaças Kaiju.</p>
+
+            <!-- ATRIBUTOS ATUALIZADOS -->
+            <section class="atributos">
+                <h2>Atributos</h2>
+                <div class="atributos-lista">
+                    <div class="atributo">
+                        <span>ATAQUE</span>
+                        <strong>5</strong>
+                    </div>
+                    <div class="atributo">
+                        <span>BÔNUS VIDA</span>
+                        <strong>+30</strong>
+                    </div>
+                    <div class="atributo destaque">
+                        <span>VIDA TOTAL</span>
+                        <strong>55</strong>
+                    </div>
+                    <div class="atributo">
+                        <span>DEFESA</span>
+                        <strong>15</strong>
+                    </div>
+                    <div class="atributo">
+                        <span>VELOCIDADE</span>
+                        <strong>10</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOVO: GERENCIADOR DE NÍVEIS E MISSÕES -->
+            <section class="admin-kaiju">
+                <h2>Gerenciador de Progresso (Níveis / Missões)</h2>
+                <form id="progresso-form">
+                    <div class="form-grid">
+                        <select id="p-tipo" required>
+                            <option value="nivel">Novo Nível</option>
+                            <option value="missao">Nova Missão</option>
+                        </select>
+                        <input type="text" id="p-texto" placeholder="Ex: Nível 4: Epicentro ou Destruir o núcleo" required>
+                        <select id="p-status" required>
+                            <option value="concluido">Passamos / Completada</option>
+                            <option value="atual">Atual / Em andamento</option>
+                            <option value="futuro">Vamos Passar / Vamos Completar</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-adicionar">Adicionar ao Progresso</button>
+                </form>
+            </section>
+
+            <!-- PROGRESSO DE NÍVEIS -->
+            <section class="niveis-missoes">
+                <h2>Progresso de Níveis</h2>
+                <ul class="lista-progresso" id="niveis-container">
+                    <!-- Gerado Dinamicamente -->
+                </ul>
+            </section>
+
+            <!-- REGISTRO DE MISSÕES -->
+            <section class="niveis-missoes">
+                <h2>Registro de Missões</h2>
+                <ul class="lista-progresso" id="missoes-container">
+                    <!-- Gerado Dinamicamente -->
+                </ul>
+            </section>
+
+            <!-- NOVO: GERENCIADOR DE KAIJUS -->
+            <section class="admin-kaiju">
+                <h2>Gerenciador de Batalhas (Registrar Kaijus)</h2>
+                <form id="kaiju-form">
+                    <div class="form-grid">
+                        <input type="text" id="k-nome" placeholder="Nome do Kaiju" required>
+                        <input type="number" id="k-forca" placeholder="Nível de Força" required>
+                        <input type="number" id="k-dano" placeholder="Dano Sofrido" required>
+                        <input type="text" id="k-data" placeholder="Quando foi vencido (Ex: 18/02)" required>
+                        
+                        <select id="k-status" required>
+                            <option value="normal">Vitória Normal</option>
+                            <option value="especial">Vitória Especial</option>
+                            <option value="absoluta">Vitória Absoluta (Paga Especial + Codex)</option>
+                        </select>
+
+                        <div class="upload-btn-wrapper">
+                            <button class="btn-upload" type="button">Escolher Foto do Kaiju</button>
+                            <input type="file" id="k-foto" accept="image/*">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-adicionar">Registrar Vitória no Painel</button>
+                </form>
+            </section>
+
+            <!-- HISTÓRICO DE KAIJUS DERROTADOS -->
+            <section class="kaijus-derrotados">
+                <h2>Kaijus Derrotados</h2>
+                <div class="kaiju-grid" id="kaiju-lista-container">
+                    <!-- Gerado Dinamicamente -->
+                </div>
+            </section>
+
+            <!-- ATAQUES -->
+            <section class="ataques">
+                <h2>Tabela de Ataques</h2>
+                <table>
+                    <tr>
+                        <th>Carta</th>
+                        <th>Ataque</th>
+                        <th>Dano</th>
+                    </tr>
+                    <tr><td>A</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>2</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>3</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>4</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>5</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>6</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>7</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>8</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>9</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>10</td><td>Soco</td><td>3</td></tr>
+                    <tr><td>J</td><td>Nada</td><td>0</td></tr>
+                    <tr><td>Q</td><td>Nada</td><td>0</td></tr>
+                    <tr><td>K</td><td>Nada</td><td>0</td></tr>
+                </table>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- CÓDIGO LÓGICO INTEGRADO -->
+    <script>
+        // Dados Padrão Iniciais (Carregados apenas na primeira vez que abre o site)
+        const niveisIniciais = [
+            { texto: "Nível 1: Distrito Costeiro (Passamos)", status: "concluido" },
+            { texto: "Nível 2: Zona Industrial (Passamos)", status: "concluido" },
+            { texto: "Nível 3: Centro Urbano (Atual)", status: "atual" },
+            { texto: "Nível 4: Epicentro da Fenda (Vamos Passar)", status: "futuro" }
+        ];
+
+        const missoesIniciais = [
+            { texto: "Estabelecer perímetro de defesa (Completada)", status: "concluido" },
+            { texto: "Escoltar comboio de suprimentos (Completada)", status: "concluido" },
+            { texto: "Neutralizar rastreadores da fenda (Em andamento)", status: "atual" },
+            { texto: "Destruir o núcleo de energia Kaiju (Vamos Completar)", status: "futuro" }
+        ];
+
+        const kaijusIniciais = [
+            { nome: "Porco", forca: "1200", dano: "25", data: "14/02/2026", status: "normal", foto: "imagens/2kaiju.jpg" },
+            { nome: "Serpente Falante", forca: "3500", dano: "40", data: "16/02/2026", status: "especial", foto: "imagens/Kaiju.jpg" },
+            { nome: "Soberano Titan", forca: "8000", dano: "52", data: "18/02/2026", status: "absoluta", foto: "imagens/kaiju3.jpg" }
+        ];
+
+        // Inicialização do LocalStorage
+        if (!localStorage.getItem('niveis_marina')) localStorage.setItem('niveis_marina', JSON.stringify(niveisIniciais));
+        if (!localStorage.getItem('missoes_marina')) localStorage.setItem('missoes_marina', JSON.stringify(missoesIniciais));
+        if (!localStorage.getItem('kaijus_marina')) localStorage.setItem('kaijus_marina', JSON.stringify(kaijusIniciais));
+
+        let fotoBase64 = "";
+        const uploadBtn = document.querySelector('.btn-upload');
+
+        // Capturar upload de fotos de forma dinâmica
+        document.getElementById('k-foto').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                uploadBtn.textContent = "Foto Pronta ✓";
+                uploadBtn.style.borderColor = "#00FFC6";
+                uploadBtn.style.color = "#00FFC6";
+                const reader = new FileReader();
+                reader.onload = function(event) { fotoBase64 = event.target.result; };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Atualizar listagem de Níveis e Missões
+        function carregarProgresso() {
+            const niveis = JSON.parse(localStorage.getItem('niveis_marina'));
+            const missoes = JSON.parse(localStorage.getItem('missoes_marina'));
+            
+            const nContainer = document.getElementById('niveis-container');
+            const mContainer = document.getElementById('missoes-container');
+            
+            nContainer.innerHTML = "";
+            mContainer.innerHTML = "";
+
+            niveis.forEach((n, idx) => {
