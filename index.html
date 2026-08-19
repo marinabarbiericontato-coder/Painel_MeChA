@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- SETAS DE NAVEGAÇÃO -->
+
+    <!-- SETAS DE NAVEGACAO -->
     <a href="index.html" class="seta esquerda">❮</a>
     <a href="index.html" class="seta direita">❯</a>
 
+
     <div class="container">
+
 
         <!-- NOME DA PERSONAGEM -->
         <h1>MARINA</h1>
+
 
         <!-- IMAGENS -->
         <div class="imagens">
@@ -31,54 +37,78 @@
             </div>
         </div>
 
-        <!-- INFORMAÇÕES BÁSICAS -->
+
+        <!-- INFORMACOES BASICAS -->
         <div class="card">
             <h2>Nome do Mecha</h2>
             <p>BARBIERI</p>
 
+
             <h2>Nome da pilota</h2>
             <p>MARINOCA</p>
 
-            <h2>Função</h2>
-            <p>Barbieri tem o papel de ajudar Marinoca durante as batalhas e no monitoramento de ameaças Kaiju.</p>
+
+            <h2>Funcao</h2>
+            <p>Barbieri tem o papel de ajudar Marinoca durante as batalhas e no monitoramento de ameacas Kaiju.</p>
+
 
             <!-- ATRIBUTOS ATUALIZADOS -->
             <section class="atributos">
                 <h2>Atributos</h2>
-                <div class="atributos-lista">
-                    <div class="atributo">
-                        <span>ATAQUE</span>
-                        <strong>5</strong>
+
+
+                <form id="atributos-form">
+                    <div class="atributos-tabela">
+
+
+                        <div class="atributo-campo">
+                            <label for="a-ataque">Ataque</label>
+                            <input type="number" id="a-ataque" value="5" min="0" required>
+                        </div>
+
+
+                        <div class="atributo-campo">
+                            <label for="a-bonus-vida">Bonus Vida</label>
+                            <input type="number" id="a-bonus-vida" value="30" min="0" required>
+                        </div>
+
+
+                        <div class="atributo-campo destaque">
+                            <label for="a-vida-total">Vida Total</label>
+                            <input type="number" id="a-vida-total" value="55" min="0" required>
+                        </div>
+
+
+                        <div class="atributo-campo">
+                            <label for="a-defesa">Defesa</label>
+                            <input type="number" id="a-defesa" value="15" min="0" required>
+                        </div>
+
+
+                        <div class="atributo-campo">
+                            <label for="a-velocidade">Velocidade</label>
+                            <input type="number" id="a-velocidade" value="10" min="0" required>
+                        </div>
+
+
                     </div>
-                    <div class="atributo">
-                        <span>BÔNUS VIDA</span>
-                        <strong>+30</strong>
-                    </div>
-                    <div class="atributo destaque">
-                        <span>VIDA TOTAL</span>
-                        <strong>55</strong>
-                    </div>
-                    <div class="atributo">
-                        <span>DEFESA</span>
-                        <strong>15</strong>
-                    </div>
-                    <div class="atributo">
-                        <span>VELOCIDADE</span>
-                        <strong>10</strong>
-                    </div>
-                </div>
+
+
+                    <button type="submit" class="btn-adicionar">Salvar Atributos</button>
+                </form>
             </section>
 
-            <!-- NOVO: GERENCIADOR DE NÍVEIS E MISSÕES -->
+
+            <!-- NOVO: GERENCIADOR DE NIVEIS E MISSOES -->
             <section class="admin-kaiju">
-                <h2>Gerenciador de Progresso (Níveis / Missões)</h2>
+                <h2>Gerenciador de Progresso (Niveis / Missoes)</h2>
                 <form id="progresso-form">
                     <div class="form-grid">
                         <select id="p-tipo" required>
-                            <option value="nivel">Novo Nível</option>
-                            <option value="missao">Nova Missão</option>
+                            <option value="nivel">Novo Nivel</option>
+                            <option value="missao">Nova Missao</option>
                         </select>
-                        <input type="text" id="p-texto" placeholder="Ex: Nível 4: Epicentro ou Destruir o núcleo" required>
+                        <input type="text" id="p-texto" placeholder="Ex: Nivel 4: Epicentro ou Destruir o nucleo" required>
                         <select id="p-status" required>
                             <option value="concluido">Passamos / Completada</option>
                             <option value="atual">Atual / Em andamento</option>
@@ -89,21 +119,24 @@
                 </form>
             </section>
 
-            <!-- PROGRESSO DE NÍVEIS -->
+
+            <!-- PROGRESSO DE NIVEIS -->
             <section class="niveis-missoes">
-                <h2>Progresso de Níveis</h2>
+                <h2>Progresso de Niveis</h2>
                 <ul class="lista-progresso" id="niveis-container">
                     <!-- Gerado Dinamicamente -->
                 </ul>
             </section>
 
-            <!-- REGISTRO DE MISSÕES -->
+
+            <!-- REGISTRO DE MISSOES -->
             <section class="niveis-missoes">
-                <h2>Registro de Missões</h2>
+                <h2>Registro de Missoes</h2>
                 <ul class="lista-progresso" id="missoes-container">
                     <!-- Gerado Dinamicamente -->
                 </ul>
             </section>
+
 
             <!-- NOVO: GERENCIADOR DE KAIJUS -->
             <section class="admin-kaiju">
@@ -111,32 +144,35 @@
                 <form id="kaiju-form">
                     <div class="form-grid">
                         <input type="text" id="k-nome" placeholder="Nome do Kaiju" required>
-                        <input type="number" id="k-forca" placeholder="Nível de Força" required>
+                        <input type="number" id="k-forca" placeholder="Nivel de Forca" required>
                         <input type="number" id="k-dano" placeholder="Dano Sofrido" required>
                         <input type="text" id="k-data" placeholder="Quando foi vencido (Ex: 18/02)" required>
-                        
+                       
                         <select id="k-status" required>
-                            <option value="normal">Vitória Normal</option>
-                            <option value="especial">Vitória Especial</option>
-                            <option value="absoluta">Vitória Absoluta (Paga Especial + Codex)</option>
+                            <option value="normal">Vitoria Normal</option>
+                            <option value="especial">Vitoria Especial</option>
+                            <option value="absoluta">Vitoria Absoluta (Paga Especial + Codex)</option>
                         </select>
+
 
                         <div class="upload-btn-wrapper">
                             <button class="btn-upload" type="button">Escolher Foto do Kaiju</button>
                             <input type="file" id="k-foto" accept="image/*">
                         </div>
                     </div>
-                    <button type="submit" class="btn-adicionar">Registrar Vitória no Painel</button>
+                    <button type="submit" class="btn-adicionar">Registrar Vitoria no Painel</button>
                 </form>
             </section>
 
-            <!-- HISTÓRICO DE KAIJUS DERROTADOS -->
+
+            <!-- HISTORICO DE KAIJUS DERROTADOS -->
             <section class="kaijus-derrotados">
                 <h2>Kaijus Derrotados</h2>
                 <div class="kaiju-grid" id="kaiju-lista-container">
                     <!-- Gerado Dinamicamente -->
                 </div>
             </section>
+
 
             <!-- ATAQUES -->
             <section class="ataques">
@@ -163,25 +199,29 @@
                 </table>
             </section>
 
+
         </div>
     </div>
 
-    <!-- CÓDIGO LÓGICO INTEGRADO -->
+
+    <!-- CODIGO LOGICO INTEGRADO -->
     <script>
-        // Dados Padrão Iniciais (Carregados apenas na primeira vez que abre o site)
+        // Dados Padrao Iniciais (Carregados apenas na primeira vez que abre o site)
         const niveisIniciais = [
-            { texto: "Nível 1: Distrito Costeiro (Passamos)", status: "concluido" },
-            { texto: "Nível 2: Zona Industrial (Passamos)", status: "concluido" },
-            { texto: "Nível 3: Centro Urbano (Atual)", status: "atual" },
-            { texto: "Nível 4: Epicentro da Fenda (Vamos Passar)", status: "futuro" }
+            { texto: "Nivel 1: Distrito Costeiro (Passamos)", status: "concluido" },
+            { texto: "Nivel 2: Zona Industrial (Passamos)", status: "concluido" },
+            { texto: "Nivel 3: Centro Urbano (Atual)", status: "atual" },
+            { texto: "Nivel 4: Epicentro da Fenda (Vamos Passar)", status: "futuro" }
         ];
 
+
         const missoesIniciais = [
-            { texto: "Estabelecer perímetro de defesa (Completada)", status: "concluido" },
+            { texto: "Estabelecer perimetro de defesa (Completada)", status: "concluido" },
             { texto: "Escoltar comboio de suprimentos (Completada)", status: "concluido" },
             { texto: "Neutralizar rastreadores da fenda (Em andamento)", status: "atual" },
-            { texto: "Destruir o núcleo de energia Kaiju (Vamos Completar)", status: "futuro" }
+            { texto: "Destruir o nucleo de energia Kaiju (Vamos Completar)", status: "futuro" }
         ];
+
 
         const kaijusIniciais = [
             { nome: "Porco", forca: "1200", dano: "25", data: "14/02/2026", status: "normal", foto: "imagens/2kaiju.jpg" },
@@ -189,36 +229,290 @@
             { nome: "Soberano Titan", forca: "8000", dano: "52", data: "18/02/2026", status: "absoluta", foto: "imagens/kaiju3.jpg" }
         ];
 
-        // Inicialização do LocalStorage
+
+        // Inicializacao do LocalStorage
         if (!localStorage.getItem('niveis_marina')) localStorage.setItem('niveis_marina', JSON.stringify(niveisIniciais));
         if (!localStorage.getItem('missoes_marina')) localStorage.setItem('missoes_marina', JSON.stringify(missoesIniciais));
         if (!localStorage.getItem('kaijus_marina')) localStorage.setItem('kaijus_marina', JSON.stringify(kaijusIniciais));
 
-        let fotoBase64 = "";
-        const uploadBtn = document.querySelector('.btn-upload');
 
-        // Capturar upload de fotos de forma dinâmica
-        document.getElementById('k-foto').addEventListener('change', function(e) {
+        let fotoBase64 = "";
+        let arquivoFotoKaiju = null;
+        const uploadBtn = document.querySelector(".btn-upload");
+
+
+        document.getElementById("k-foto").addEventListener("change", function(e) {
             const file = e.target.files[0];
-            if (file) {
-                uploadBtn.textContent = "Foto Pronta ✓";
-                uploadBtn.style.borderColor = "#00FFC6";
-                uploadBtn.style.color = "#00FFC6";
-                const reader = new FileReader();
-                reader.onload = function(event) { fotoBase64 = event.target.result; };
-                reader.readAsDataURL(file);
+
+
+            if (!file) {
+                arquivoFotoKaiju = null;
+                fotoBase64 = "";
+                uploadBtn.textContent = "Escolher Foto do Kaiju";
+                return;
             }
+
+
+            arquivoFotoKaiju = file;
+            uploadBtn.textContent = "Foto Pronta";
+            uploadBtn.style.borderColor = "#00FFC6";
+            uploadBtn.style.color = "#00FFC6";
         });
 
-        // Atualizar listagem de Níveis e Missões
+
+        function lerFoto(file) {
+            return new Promise(function(resolve, reject) {
+                const reader = new FileReader();
+
+
+                reader.onload = function(event) {
+                    resolve(event.target.result);
+                };
+
+
+                reader.onerror = function() {
+                    reject(new Error("Nao foi possivel ler a foto."));
+                };
+
+
+                reader.readAsDataURL(file);
+            });
+        }
+
+
+        function carregarAtributos() {
+            const atributos = JSON.parse(localStorage.getItem("atributos_marina"));
+
+
+            if (!atributos) {
+                return;
+            }
+
+
+            document.getElementById("a-ataque").value = atributos.ataque;
+            document.getElementById("a-bonus-vida").value = atributos.bonusVida;
+            document.getElementById("a-vida-total").value = atributos.vidaTotal;
+            document.getElementById("a-defesa").value = atributos.defesa;
+            document.getElementById("a-velocidade").value = atributos.velocidade;
+        }
+
+
+        document.getElementById("atributos-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+
+            const atributos = {
+                ataque: document.getElementById("a-ataque").value,
+                bonusVida: document.getElementById("a-bonus-vida").value,
+                vidaTotal: document.getElementById("a-vida-total").value,
+                defesa: document.getElementById("a-defesa").value,
+                velocidade: document.getElementById("a-velocidade").value
+            };
+
+
+            localStorage.setItem("atributos_marina", JSON.stringify(atributos));
+            alert("Atributos salvos!");
+        });
+
+
         function carregarProgresso() {
             const niveis = JSON.parse(localStorage.getItem('niveis_marina'));
             const missoes = JSON.parse(localStorage.getItem('missoes_marina'));
-            
+           
             const nContainer = document.getElementById('niveis-container');
             const mContainer = document.getElementById('missoes-container');
-            
+           
             nContainer.innerHTML = "";
             mContainer.innerHTML = "";
 
-            niveis.forEach((n, idx) => {
+
+
+
+                const li = document.createElement("li");
+                li.className = `progresso-item ${n.status}`;
+                li.innerHTML = `
+                    <span>${n.texto}</span>
+                    <button type="button" onclick="removerProgresso('nivel', ${idx})">Excluir</button>
+                `;
+                nContainer.appendChild(li);
+            };
+
+
+            missoes.forEach((m, idx) => {
+                const li = document.createElement("li");
+                li.className = `progresso-item ${m.status}`;
+                li.innerHTML = `
+                    <span>${m.texto}</span>
+                    <button type="button" onclick="removerProgresso('missao', ${idx})">Excluir</button>
+                `;
+                mContainer.appendChild(li);
+            });
+       
+
+
+        // Adicionar nivel ou missao
+        document.getElementById("progresso-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+
+            const tipo = document.getElementById("p-tipo").value;
+            const texto = document.getElementById("p-texto").value.trim();
+            const status = document.getElementById("p-status").value;
+
+
+            if (!texto) return;
+
+
+            const chave = tipo === "nivel" ? "niveis_marina" : "missoes_marina";
+            const lista = JSON.parse(localStorage.getItem(chave)) || [];
+
+
+            lista.push({ texto, status });
+            localStorage.setItem(chave, JSON.stringify(lista));
+
+
+            this.reset();
+            carregarAtributos();
+        carregarProgresso();
+        });
+
+
+        // Remover nivel ou missao
+        function removerProgresso(tipo, indice) {
+            const chave = tipo === "nivel" ? "niveis_marina" : "missoes_marina";
+            const lista = JSON.parse(localStorage.getItem(chave)) || [];
+
+
+            lista.splice(indice, 1);
+            localStorage.setItem(chave, JSON.stringify(lista));
+
+
+            carregarProgresso();
+        }
+
+
+        // Atualizar listagem de Kaijus
+        function carregarKaijus() {
+            const kaijus = JSON.parse(localStorage.getItem("kaijus_marina")) || [];
+            const container = document.getElementById("kaiju-lista-container");
+
+
+            container.innerHTML = "";
+
+
+            kaijus.forEach((k, idx) => {
+                const card = document.createElement("div");
+                card.className = `kaiju-card ${k.status}`;
+
+
+                const imagem = k.foto
+                    ? `<img src="${k.foto}" alt="Kaiju ${k.nome}">`
+                    : `<div class="sem-foto">SEM FOTO</div>`;
+
+
+                card.innerHTML = `
+                    ${imagem}
+                    <div class="kaiju-info">
+                        <h3>${k.nome}</h3>
+                        <p><strong>Forca:</strong> ${k.forca}</p>
+                        <p><strong>Dano sofrido:</strong> ${k.dano}</p>
+                        <p><strong>Vencido em:</strong> ${k.data}</p>
+                        <p><strong>Resultado:</strong> ${formatarStatusKaiju(k.status)}</p>
+                        <button type="button" onclick="removerKaiju(${idx})">Excluir</button>
+                    </div>
+                `;
+
+
+                container.appendChild(card);
+            });
+        }
+
+
+        function formatarStatusKaiju(status) {
+            if (status === "especial") return "Vitoria Especial";
+            if (status === "absoluta") return "Vitoria Absoluta";
+            return "Vitoria Normal";
+        }
+
+
+        // Registrar Kaiju
+        document.getElementById("kaiju-form").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+
+            const nome = document.getElementById("k-nome").value.trim();
+            const forca = document.getElementById("k-forca").value;
+            const dano = document.getElementById("k-dano").value;
+            const data = document.getElementById("k-data").value.trim();
+            const status = document.getElementById("k-status").value;
+
+
+            if (nome === "" || forca === "" || dano === "" || data === "") {
+                alert("Preencha todos os campos do Kaiju.");
+                return;
+            }
+
+
+            try {
+                if (arquivoFotoKaiju) {
+                    fotoBase64 = await lerFoto(arquivoFotoKaiju);
+                }
+
+
+                const kaijus = JSON.parse(localStorage.getItem("kaijus_marina")) || [];
+
+
+                kaijus.push({
+                    nome: nome,
+                    forca: forca,
+                    dano: dano,
+                    data: data,
+                    status: status,
+                    foto: fotoBase64
+                });
+
+
+                localStorage.setItem("kaijus_marina", JSON.stringify(kaijus));
+
+
+                this.reset();
+                fotoBase64 = "";
+                arquivoFotoKaiju = null;
+
+
+                uploadBtn.textContent = "Escolher Foto do Kaiju";
+                uploadBtn.style.borderColor = "";
+                uploadBtn.style.color = "";
+
+
+                carregarKaijus();
+
+
+                alert("Kaiju registrado com sucesso!");
+            } catch (erro) {
+                console.error(erro);
+                alert("Nao foi possivel salvar a foto do Kaiju.");
+            }
+        });
+
+
+        function removerKaiju(indice) {
+            const kaijus = JSON.parse(localStorage.getItem("kaijus_marina")) || [];
+
+
+            kaijus.splice(indice, 1);
+            localStorage.setItem("kaijus_marina", JSON.stringify(kaijus));
+
+
+            carregarKaijus();
+        }
+
+
+        // Carregar tudo ao abrir a pagina
+        carregarProgresso();
+        carregarKaijus();
+    </script>
+
+
+</body>
+</html>
