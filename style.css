@@ -1,8 +1,10 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     background-color: #050509;
@@ -12,10 +14,6 @@ body {
 }
 
 
-/* =========================
-   CONTAINER
-========================= */
-
 .container {
     width: 90%;
     max-width: 1100px;
@@ -23,10 +21,6 @@ body {
     padding: 40px 20px;
 }
 
-
-/* =========================
-   TÍTULO
-========================= */
 
 h1 {
     text-align: center;
@@ -37,10 +31,6 @@ h1 {
     text-shadow: 0 0 12px rgba(155, 77, 255, 0.35);
 }
 
-
-/* =========================
-   SETAS
-========================= */
 
 .seta {
     position: fixed;
@@ -54,23 +44,22 @@ h1 {
     z-index: 10;
 }
 
+
 .seta:hover {
     color: #00FFC6;
     text-shadow: 0 0 10px #00FFC6;
 }
 
+
 .esquerda {
     left: 20px;
 }
+
 
 .direita {
     right: 20px;
 }
 
-
-/* =========================
-   IMAGENS
-========================= */
 
 .imagens {
     display: flex;
@@ -79,9 +68,11 @@ h1 {
     margin-bottom: 40px;
 }
 
+
 .imagem {
     text-align: center;
 }
+
 
 .imagem img {
     width: 230px;
@@ -93,11 +84,13 @@ h1 {
     transition: 0.3s;
 }
 
+
 .imagem img:hover {
     border-color: #00FFC6;
     box-shadow: 0 0 18px rgba(0, 255, 198, 0.25);
     transform: scale(1.03);
 }
+
 
 .imagem p {
     margin-top: 10px;
@@ -105,10 +98,6 @@ h1 {
     font-weight: bold;
 }
 
-
-/* =========================
-   CARD PRINCIPAL
-========================= */
 
 .card {
     background-color: #09090f;
@@ -119,10 +108,6 @@ h1 {
 }
 
 
-/* =========================
-   INFORMAÇÕES
-========================= */
-
 .card h2 {
     color: #9B4DFF;
     margin-top: 20px;
@@ -131,9 +116,11 @@ h1 {
     letter-spacing: 1px;
 }
 
+
 .card > h2:first-child {
     margin-top: 0;
 }
+
 
 .card p {
     color: #eeeeee;
@@ -141,9 +128,8 @@ h1 {
 }
 
 
-/* =========================
-   ATRIBUTOS
-========================= */
+/* ATRIBUTOS */
+
 
 .atributos {
     margin-top: 35px;
@@ -151,62 +137,149 @@ h1 {
     border-top: 1px solid #9B4DFF;
 }
 
+
 .atributos h2 {
     margin-top: 0;
     margin-bottom: 20px;
 }
 
-/* Lista */
-.atributos-lista {
+
+.atributos-tabela {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
 
-/* Cada atributo */
-.atributo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.atributo-campo {
     background-color: #050509;
     border: 1px solid #9B4DFF;
     padding: 14px 18px;
-    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
 }
 
-.atributo:hover {
-    border-color: #00FFC6;
-    box-shadow: 0 0 10px rgba(0, 255, 198, 0.15);
-}
 
-/* Destaque para a Vida Total (55) */
-.atributo.destaque {
+.atributo-campo.destaque {
     border-color: #ef4444;
-    box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
 }
 
-.atributo.destaque strong {
-    color: #ef4444;
-    text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
-}
 
-/* Nome */
-.atributo span {
+.atributo-campo label {
     color: #eeeeee;
     font-size: 14px;
     letter-spacing: 1px;
 }
 
-/* Valor */
-.atributo strong {
+
+.atributo-campo input {
+    width: 100px;
+    padding: 8px;
+    background-color: #09090f;
     color: #00FFC6;
-    font-size: 18px;
+    border: 1px solid #3b1d5c;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
 }
 
 
-/* =========================
-   NÍVEIS E MISSÕES
-========================= */
+.atributo-campo.destaque input {
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+
+/* FORMULARIOS */
+
+
+.admin-kaiju {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #9B4DFF;
+}
+
+
+.admin-kaiju h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+
+.form-grid input,
+.form-grid select {
+    width: 100%;
+    padding: 12px;
+    background-color: #050509;
+    color: white;
+    border: 1px solid #3b1d5c;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.form-grid input:focus,
+.form-grid select:focus {
+    border-color: #9B4DFF;
+}
+
+
+.btn-adicionar {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #9B4DFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.btn-adicionar:hover {
+    background-color: #00FFC6;
+    color: #050509;
+}
+
+
+.upload-btn-wrapper {
+    position: relative;
+}
+
+
+.btn-upload {
+    width: 100%;
+    padding: 12px;
+    background-color: #050509;
+    color: #9B4DFF;
+    border: 1px solid #9B4DFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.upload-btn-wrapper input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+/* NIVEIS E MISSOES */
+
 
 .niveis-missoes {
     margin-top: 35px;
@@ -214,15 +287,18 @@ h1 {
     border-top: 1px solid #9B4DFF;
 }
 
+
 .niveis-missoes h2 {
     margin-top: 0;
     margin-bottom: 20px;
 }
 
+
 .lista-progresso {
     list-style: none;
     padding-left: 0;
 }
+
 
 .lista-progresso li {
     padding: 14px 18px;
@@ -230,12 +306,13 @@ h1 {
     background-color: #050509;
     border: 1px solid #3b1d5c;
     font-size: 14px;
-    letter-spacing: 0.5px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-/* Status: Passamos / Completada */
+
 .lista-progresso li.concluido {
     color: #64748b;
     text-decoration: line-through;
@@ -243,44 +320,41 @@ h1 {
     opacity: 0.6;
 }
 
-.lista-progresso li.concluido::before {
-    content: "✓ ";
-    color: #64748b;
-    margin-right: 8px;
-    text-decoration: none;
-    display: inline-block;
-}
 
-/* Status: Atual / Em andamento */
 .lista-progresso li.atual {
     border-color: #00FFC6;
     color: white;
     font-weight: bold;
-    box-shadow: 0 0 10px rgba(0, 255, 198, 0.1);
 }
 
-.lista-progresso li.atual::before {
-    content: "➢ ";
-    color: #00FFC6;
-    margin-right: 8px;
-}
 
-/* Status: Vamos Passar / Vamos Completar */
 .lista-progresso li.futuro {
     color: #fbbf24;
     border-style: dashed;
     border-color: #fbbf24;
 }
 
-.lista-progresso li.futuro::before {
-    content: "🔒 ";
-    margin-right: 8px;
+
+.lista-progresso button,
+.kaiju-info button {
+    padding: 7px 12px;
+    background-color: transparent;
+    color: #ff5555;
+    border: 1px solid #ff5555;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 
-/* =========================
-   KAIJUS DERROTADOS
-========================= */
+.lista-progresso button:hover,
+.kaiju-info button:hover {
+    background-color: #ff5555;
+    color: white;
+}
+
+
+/* KAIJUS DERROTADOS */
+
 
 .kaijus-derrotados {
     margin-top: 35px;
@@ -288,10 +362,12 @@ h1 {
     border-top: 1px solid #9B4DFF;
 }
 
+
 .kaijus-derrotados h2 {
     margin-top: 0;
     margin-bottom: 20px;
 }
+
 
 .kaiju-grid {
     display: flex;
@@ -299,110 +375,79 @@ h1 {
     gap: 15px;
 }
 
-.kaiju-item {
+
+.kaiju-card {
     display: flex;
     background-color: #050509;
     border: 1px solid #3b1d5c;
     border-radius: 6px;
     overflow: hidden;
-    transition: 0.3s;
 }
 
-.kaiju-item:hover {
+
+.kaiju-card:hover {
     border-color: #9B4DFF;
     box-shadow: 0 0 12px rgba(155, 77, 255, 0.15);
 }
 
-/* Espaço da Foto do Kaiju */
-.kaiju-foto {
-    width: 120px;
-    min-width: 120px;
-    background: #11111b;
+
+.kaiju-card img,
+.sem-foto {
+    width: 140px;
+    min-width: 140px;
+    height: 160px;
+    object-fit: cover;
+}
+
+
+.sem-foto {
+    background-color: #11111b;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     color: #475569;
     font-size: 12px;
-    border-right: 1px solid #3b1d5c;
 }
 
-.kaiju-foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 5px 0 0 5px;
-}
 
-/* Detalhes de Texto do Combate */
-.kaiju-detalhes {
+.kaiju-info {
     padding: 15px;
     flex-grow: 1;
 }
 
-.kaiju-detalhes h3 {
-    margin: 0 0 8px 0;
-    font-size: 16px;
+
+.kaiju-info h3 {
+    margin-bottom: 8px;
     color: #00FFC6;
-    letter-spacing: 0.5px;
+    font-size: 18px;
 }
 
-.kaiju-detalhes p {
-    margin: 4px 0;
-    font-size: 13px;
+
+.kaiju-info p {
+    margin: 5px 0;
     color: #cdcdcd;
+    font-size: 13px;
 }
 
-.kaiju-detalhes strong {
-    color: white;
+
+.kaiju-card.normal {
+    border-color: #475569;
 }
 
-/* Badges de Tipos de Vitória */
-.badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
+
+.kaiju-card.especial {
+    border-color: #6d28d9;
 }
 
-.status-normal {
-    background-color: #334155;
-    color: #ffffff;
-    border: 1px solid #475569;
-}
 
-.status-especial {
-    background-color: #4c1d95;
-    color: #e9d5ff;
-    border: 1px solid #6d28d9;
-}
-
-/* Vitória Absoluta (Destaque animado que paga o especial e o codex) */
-.status-absoluta {
-    background-color: #7f1d1d;
-    color: #fee2e2;
-    border: 1px solid #b91c1c;
+.kaiju-card.absoluta {
+    border-color: #b91c1c;
     box-shadow: 0 0 8px rgba(185, 28, 28, 0.4);
-    animation: pulsarStatus 2s infinite;
-}
-
-@keyframes pulsarStatus {
-    0% { opacity: 0.9; box-shadow: 0 0 4px rgba(185, 28, 28, 0.4); }
-    50% { opacity: 1; box-shadow: 0 0 12px rgba(185, 28, 28, 0.7); }
-    100% { opacity: 0.9; box-shadow: 0 0 4px rgba(185, 28, 28, 0.4); }
 }
 
 
-/* =========================
-   ATAQUES (TABELA ORIGINAL)
-========================= */
+/* ATAQUES */
+
 
 .ataques {
     margin-top: 35px;
@@ -410,15 +455,18 @@ h1 {
     border-top: 1px solid #9B4DFF;
 }
 
+
 .ataques h2 {
     margin-top: 0;
     margin-bottom: 20px;
 }
 
+
 table {
     width: 100%;
     border-collapse: collapse;
 }
+
 
 th {
     background-color: #9B4DFF;
@@ -426,9 +474,8 @@ th {
     border: 1px solid #9B4DFF;
     padding: 12px;
     text-align: center;
-    font-size: 14px;
-    letter-spacing: 1px;
 }
+
 
 td {
     background-color: #050509;
@@ -438,16 +485,12 @@ td {
     text-align: center;
 }
 
+
 tr:hover td {
     background-color: #100b18;
     color: #00FFC6;
-    border-color: #9B4DFF;
 }
 
-
-/* =========================
-   RESPONSIVIDADE APRIMORADA
-========================= */
 
 @media (max-width: 700px) {
     .container {
@@ -455,55 +498,64 @@ tr:hover td {
         padding: 25px 10px;
     }
 
+
     h1 {
         font-size: 32px;
     }
+
 
     .imagens {
         flex-direction: column;
         align-items: center;
     }
 
-    .atributos-lista {
+
+    .atributos-tabela,
+    .form-grid {
         grid-template-columns: 1fr;
     }
+
 
     .seta {
         font-size: 30px;
     }
 
+
     .esquerda {
         left: 5px;
     }
+
 
     .direita {
         right: 5px;
     }
 
+
     .card {
         padding: 20px;
     }
 
-    .kaiju-item {
+
+    .kaiju-card {
         flex-direction: column;
     }
 
-    .kaiju-foto {
+
+    .kaiju-card img,
+    .sem-foto {
         width: 100%;
-        height: 140px;
-        border-right: none;
-        border-bottom: 1px solid #3b1d5c;
+        min-width: 100%;
+        height: 180px;
     }
-    
-    .kaiju-foto img {
-        border-radius: 5px 5px 0 0;
-    }
+
 
     table {
         font-size: 13px;
     }
 
-    th, td {
+
+    th,
+    td {
         padding: 8px;
     }
 }
